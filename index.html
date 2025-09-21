@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字组纽台 (Digital Kumihimo)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 模式选择模态框 (保持不变) -->
+    <div id="selection-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>选择一个编织方案</h2>
+            <div id="pattern-list"></div>
+        </div>
+    </div>
+
+    <!-- 新增！三栏式工作区 -->
+    <div id="workspace">
+        <!-- 左栏：丸台 -->
+        <div id="marudai-column">
+            <div id="marudai-container"></div>
+        </div>
+
+        <!-- 中栏：双预览 -->
+        <div id="preview-column">
+            <div class="preview-container">
+                <h2>过程预览 (松散)</h2>
+                <div class="canvas-wrapper" id="loose-canvas-wrapper">
+                    <canvas id="loose-preview" width="200" height="2000"></canvas>
+                </div>
+            </div>
+            <div class="preview-container">
+                <h2>效果预览 (拉紧)</h2>
+                <div class="canvas-wrapper" id="tight-canvas-wrapper">
+                    <canvas id="tight-preview" width="200" height="2000"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右栏：控制与信息 -->
+        <div id="controls-column">
+            <h1 id="pattern-title">数字组纽台</h1>
+            <div id="progress-container">
+                <span id="progress-text">步骤 0 / 0</span>
+                <div id="progress-bar-bg">
+                    <div id="progress-bar-fg"></div>
+                </div>
+            </div>
+            <div id="controls">
+                <button id="btn-undo" disabled>撤销</button>
+                <button id="btn-restart">重新选择</button>
+            </div>
+            <div id="info-panel">
+                <h3>方案描述</h3>
+                <p id="pattern-description">请先选择一个编织方案。</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
